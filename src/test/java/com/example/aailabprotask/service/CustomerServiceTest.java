@@ -1,32 +1,23 @@
 package com.example.aailabprotask.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
 import com.example.aailabprotask.entity.Customer;
 import com.example.aailabprotask.entity.Order;
 import com.example.aailabprotask.repo.OrderRepository;
-import com.example.aailabprotask.service.CustomerService;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
+import java.util.ArrayList;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-import static javafx.beans.binding.Bindings.or;
-import static org.mockito.ArgumentMatchers.floatThat;
-import static org.mockito.Mockito.when;
-
-import static javafx.beans.binding.Bindings.when;
+import org.junit.jupiter.api.Test;
 
 
 @ExtendWith(MockitoExtension.class)
-class CustomerServiceTest {
+public class CustomerServiceTest {
 
     @InjectMocks
     private CustomerService customerService;
@@ -35,20 +26,22 @@ class CustomerServiceTest {
     private OrderRepository repository;
 
     @Mock
-    private Order order;
-
-    @Mock
     private Customer customer;
+
 
     @Test
     public void testGetProductsOfCustomer() {
-        when(customerService.getProductsOfCustomer(Math.toIntExact(customer.getId())))
-                .thenReturn((ArrayList<Order>) Arrays.asList(new Order(1L, 1,"Siemens", 10)));
+        ArrayList<Order> list = new ArrayList<>();
+        Order order = new Order();
+        order.setProductName("HP");
+        list.add(order);
 
-        List<Order> item = customerService.getProductsOfCustomer(Math.toIntExact(order.getId()));
+        when(customerService.getProductsOfCustomer(Math.toIntExact(1))).thenReturn(
+                list);
 
-        assertEquals(1,"aaaa");
-//        assertEquals("HP Printer",order.getProductName());
-//        assertEquals("Samsung TV",order.getProductName());
+        ArrayList<Order> actualList =
+                customerService.getProductsOfCustomer(1);
+
+        assertEquals(actualList.get(0).getProductName(), list.get(0).getProductName());
     }
 }

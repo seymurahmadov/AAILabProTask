@@ -19,7 +19,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int customerId;
+    @Column(name = "customer_id")
+    Long customer_id;
 
 //    @NotBlank
 //    @Size(max = 50)
