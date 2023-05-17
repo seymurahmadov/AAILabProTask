@@ -1,19 +1,18 @@
 package com.example.aailabprotask.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
-
 import com.example.aailabprotask.entity.Customer;
 import com.example.aailabprotask.entity.Order;
-import com.example.aailabprotask.repo.OrderRepository;
-import java.util.ArrayList;
+import com.example.aailabprotask.repository.OrderRepository;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 
 @ExtendWith(MockitoExtension.class)

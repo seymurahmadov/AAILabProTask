@@ -1,7 +1,6 @@
-package com.example.aailabprotask.repo;
+package com.example.aailabprotask.repository;
 
 import com.example.aailabprotask.entity.Customer;
-import com.example.aailabprotask.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 package com.example.aailabprotask.service;
 
 import com.example.aailabprotask.entity.Order;
-import com.example.aailabprotask.repo.OrderRepository;
+import com.example.aailabprotask.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
