@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 
 
 @ExtendWith(MockitoExtension.class)
-public class CustomerServiceTest {
+public class OrderServiceTest {
 
     @InjectMocks
     private OrderService customerService;
