@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name="orders")
+@Table(name = "orders")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,13 +20,13 @@ public class Order {
     private Long id;
 
     @Column(name = "customer_id")
-    Long customer_id;
+    int customerId;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Size(max = 50)
     private String productName;
 
 
-//    @Size(max = 50)
+    //    @Size(max = 50)
     private int price;
 }

@@ -1,7 +1,7 @@
 package com.example.aailabprotask.controller;
 
 import com.example.aailabprotask.entity.Order;
-import com.example.aailabprotask.service.CustomerService;
+import com.example.aailabprotask.service.OrderService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +13,9 @@ import java.util.ArrayList;
 @RequestMapping("/order")
 public class OrderController {
 
-    private final CustomerService customerService;
+    private final OrderService customerService;
 
-    public OrderController(CustomerService customerService) {
+    public OrderController(OrderService customerService) {
         this.customerService = customerService;
     }
 

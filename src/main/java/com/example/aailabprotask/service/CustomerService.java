@@ -1,20 +1,21 @@
 package com.example.aailabprotask.service;
 
+import com.example.aailabprotask.entity.Customer;
 import com.example.aailabprotask.entity.Order;
-import com.example.aailabprotask.repo.OrderRepository;
+import com.example.aailabprotask.repo.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
 @Service
 public class CustomerService {
-    private final OrderRepository orderRepository;
+    private final CustomerRepository customerRepository;
 
-    public CustomerService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
-    public ArrayList<Order> getProductsOfCustomer(int customerId){
-        return orderRepository.findAllByCustomerId(customerId);
+    public ArrayList<Customer> getCustomer(){
+       return customerRepository.findAll();
     }
 }

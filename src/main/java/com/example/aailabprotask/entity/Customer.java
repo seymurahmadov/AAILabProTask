@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="customers")
+@Table(name = "customers")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,16 +21,16 @@ public class Customer {
     private Long id;
 
 
-//    @NotBlank
+    //    @NotBlank
 //    @Column(unique = true)
 //    @Size(min = 1, max = 100)
     private String username;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Size(max = 50)
     private String firstName;
 
-//    @Size(max = 50)
+    //    @Size(max = 50)
     private String lastName;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
