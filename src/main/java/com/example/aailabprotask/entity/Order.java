@@ -15,6 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,11 +23,7 @@ public class Order {
     @Column(name = "customer_id")
     int customerId;
 
-    //    @NotBlank
-//    @Size(max = 50)
     private String productName;
 
-
-    //    @Size(max = 50)
     private int price;
 }

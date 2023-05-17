@@ -16,21 +16,15 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class Customer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    //    @NotBlank
-//    @Column(unique = true)
-//    @Size(min = 1, max = 100)
     private String username;
 
-    //    @NotBlank
-//    @Size(max = 50)
     private String firstName;
 
-    //    @Size(max = 50)
     private String lastName;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
